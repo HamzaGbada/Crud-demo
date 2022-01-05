@@ -1,4 +1,4 @@
-package com.crudemo.mongo.demo;
+package com.crudemo.mongo.demo.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

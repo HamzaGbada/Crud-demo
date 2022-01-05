@@ -1,4 +1,6 @@
-package com.crudemo.mongo.demo;
+package com.crudemo.mongo.demo.utils;
+
+import com.crudemo.mongo.demo.entities.Student;
 
 import java.util.Arrays;
 import java.util.List;

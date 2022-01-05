@@ -1,10 +1,15 @@
-package com.crudemo.mongo.demo;
+package com.crudemo.mongo.demo.service.Implementation;
 
+import com.crudemo.mongo.demo.entities.Student;
+import com.crudemo.mongo.demo.repositories.StudentRepository;
+import com.crudemo.mongo.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class StudentServiceImpl implements StudentService{
+@Service
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
