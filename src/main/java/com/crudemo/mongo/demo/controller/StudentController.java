@@ -4,6 +4,7 @@ import com.crudemo.mongo.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,11 @@ public class StudentController {
     @GetMapping("/getAllStudent")
     public ResponseEntity<?> getAllStudent(){
         return ResponseEntity.ok(studentService.getAll());
+    }
+
+    @GetMapping("/getStudentByEmail/{email}")
+    public ResponseEntity<?> getStudentByEmail(@PathVariable String email){
+        return ResponseEntity.ok(studentService.getByEmail(email));
     }
 
 
