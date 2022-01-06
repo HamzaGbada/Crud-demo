@@ -5,7 +5,7 @@ services:
     build: .
     container_name: crud
     ports:
-      - "8080:8080"
+      - "9090:9090"
     environment:
       - MONGO_HOST=mongodb
     depends_on:
