@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    image: 'crud_demo'
+    build: .
+    container_name: crud
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_HOST=mongodb
+    depends_on:
+      - db
+  mongodb:
+    image: 'mongo'
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: test
