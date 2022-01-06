@@ -2,12 +2,14 @@ package com.crudemo.mongo.demo.service.Implementation;
 
 import com.crudemo.mongo.demo.entities.Student;
 import com.crudemo.mongo.demo.entities.StudentModel;
+import com.crudemo.mongo.demo.entities.StudentUpdateModel;
 import com.crudemo.mongo.demo.repositories.StudentRepository;
 import com.crudemo.mongo.demo.service.StudentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -20,13 +22,13 @@ public class StudentServiceImpl implements StudentService {
     private StudentRepository studentRepository;
 
     @Override
-    public List<Student> getAll() {
-        return studentRepository.findAll();
+    public List<StudentModel> getAll() {
+        return Arrays.asList(modelMapper.map(studentRepository.findAll(), StudentModel[].class));
     }
 
     @Override
-    public Student getByEmail(String email) {
-        return studentRepository.findByEmail(email);
+    public StudentModel getByEmail(String email) {
+        return modelMapper.map(studentRepository.findByEmail(email), StudentModel.class);
     }
 
     @Override
@@ -39,6 +41,16 @@ public class StudentServiceImpl implements StudentService {
     public String createStudent(StudentModel studentModel) {
         Student student = modelMapper.map(studentModel, Student.class);
         studentRepository.save(student);
-        return "Student Created Successfully";
+        return "Student created Successfully";
+    }
+
+    @Override
+    public String updateStudent(String email, StudentUpdateModel studentModel) {
+        Student student = studentRepository.findByEmail(email);
+        student.setName(studentModel.getName());
+        student.setPhoneNumber(studentModel.getPhoneNumber());
+        student.setCIN(studentModel.getCIN());
+        studentRepository.save(student);
+        return "Student updated Successfully";
     }
 }

@@ -1,6 +1,7 @@
 package com.crudemo.mongo.demo.controller;
 
 import com.crudemo.mongo.demo.entities.StudentModel;
+import com.crudemo.mongo.demo.entities.StudentUpdateModel;
 import com.crudemo.mongo.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,5 +34,9 @@ public class StudentController {
         return ResponseEntity.ok(studentService.createStudent(studentModel));
     }
 
+    @PutMapping("/updateStudent")
+    public ResponseEntity<?> updateStudent(@RequestParam String email, @RequestBody StudentUpdateModel studentModel){
+        return ResponseEntity.ok(studentService.updateStudent(email, studentModel));
+    }
 
 }
