@@ -1,8 +1,7 @@
 version: '2'
 services:
   app:
-    image: 'crud_demo'
-    build: .
+    image: 'hamzagbada/crud:1.0'
     container_name: crud
     ports:
       - "9090:9090"
