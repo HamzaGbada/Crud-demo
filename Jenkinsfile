@@ -4,7 +4,7 @@ node{
    }
     stage('Build Docker Image'){
      sh '''if [[ "$(docker images -q hamzagbada/crud:1.0 2> /dev/null)" == "" ]]; then
-                   docker build -t --force-rm hamzagbada/crud:1.0 .
+                   docker build --force-rm -t hamzagbada/crud:1.0 .
                  fi'''
    }
     stage('Push Docker Image to dockerHub'){
