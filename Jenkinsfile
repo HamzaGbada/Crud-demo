@@ -14,7 +14,7 @@ node{
         }
     }
     stage('Run the application'){
-     sh 'docker-compose up -d'
+     sh 'docker-compose up'
     }
 
 }
