@@ -9,7 +9,7 @@ services:
     environment:
       - MONGO_HOST=mongodb
     depends_on:
-      - db
+      - mongodb
   mongodb:
     image: 'mongo'
     container_name: mongodb
