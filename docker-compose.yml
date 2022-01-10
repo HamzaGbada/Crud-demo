@@ -3,6 +3,7 @@ services:
   app:
     image: 'hamzagbada/crud:1.0'
     container_name: crud
+    restart: always
     ports:
       - "9090:9090"
     environment:
@@ -12,6 +13,7 @@ services:
   mongodb:
     image: 'mongo'
     container_name: mongodb
+    restart: always
     ports:
       - "27017:27017"
     environment:
