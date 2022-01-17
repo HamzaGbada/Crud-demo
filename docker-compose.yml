@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     image: 'hamzagbada/crud:1.0'
-    restart: always
+#    restart: always
     ports:
       - "9090:9090"
     environment:
@@ -11,7 +11,7 @@ services:
       - mongodb
   mongodb:
     image: 'mongo'
-    restart: always
+#    restart: always
     ports:
       - "27017:27017"
     environment:
