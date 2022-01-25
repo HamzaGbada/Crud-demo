@@ -14,7 +14,7 @@ node{
         }
     }
     stage('Run the application'){
-     sh 'docker-compose up --force-recreate'
+     sh 'docker-compose up -d --force-recreate'
     }
 
 }
