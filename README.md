@@ -41,8 +41,7 @@
 This project is carried out as part of a technical interview with the company Smartek.
 So the main idea is to develop an application explains **CRUD** 
 operations using spring boot and mongo DB. In this 
-app we are using Spring Data JPA for built-in methods to do CRUD operations and Mongo queries 
-using MongoTemplate. We used also Docker to create required images and containers for the app, and 
+app we are using MongoTemplate for built-in methods to do CRUD operations and Mongo queries. We used also Docker to create required images and containers for the app, and 
 we use Jenkins to prepare **CI/CD** pipeline.
 
 ### Built With
